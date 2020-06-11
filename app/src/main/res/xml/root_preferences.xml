@@ -1,0 +1,46 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="@string/web_server_header">
+
+        <SwitchPreferenceCompat
+            app:key="webServerEnabled"
+            app:title="@string/web_server_enabled" />
+
+        <EditTextPreference
+            app:key="webServerAddress"
+            app:title="@string/web_server_address"
+            app:useSimpleSummaryProvider="true" />
+
+        <EditTextPreference
+            app:key="webServerPort"
+            app:title="@string/web_server_port"
+            app:useSimpleSummaryProvider="true" />
+
+        <!-- <ListPreference
+            app:defaultValue="reply"
+            app:entries="@array/reply_entries"
+            app:entryValues="@array/reply_values"
+            app:key="reply"
+            app:title="@string/reply_title"
+            app:useSimpleSummaryProvider="true" /> -->
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/dashb_header">
+
+        <EditTextPreference
+            app:key="dashbRefreshSec"
+            app:title="@string/dashb_refresh"
+            app:useSimpleSummaryProvider="true" />
+
+        <!--
+        <SwitchPreferenceCompat
+            app:dependency="sync"
+            app:key="attachment"
+            app:summaryOff="@string/attachment_summary_off"
+            app:summaryOn="@string/attachment_summary_on"
+            app:title="@string/attachment_title" /> -->
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

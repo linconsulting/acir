@@ -7,18 +7,17 @@ import fi.iki.elonen.NanoHTTPD;
 public class NanoWs extends NanoHTTPD {
     public static final int PORT = 8765;
 
+    private NanoWsMiddleware middleware;
+
     public NanoWs(int port) throws IOException {
         super(  port == 0 ? PORT : port  );
+        middleware = new NanoWsMiddleware();
     }
 
     @Override
     public Response serve(IHTTPSession session) {
-        String uri = session.getUri();
 
-        if (uri.equals("/hello")) {
-            String response = "HelloWorld";
-            return newFixedLengthResponse(response);
-        }
-        return  null;
+        return middleware.processResponse(session);
+
     }
 }
